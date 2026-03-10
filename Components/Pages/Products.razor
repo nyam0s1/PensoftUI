@@ -1,0 +1,60 @@
+﻿@page "/products"
+
+<PageTitle>Products</PageTitle>
+
+<h3>Products</h3>
+
+@if (p == 1)
+{
+	<p>Bancassurance System</p>
+}
+@if (p == 2)
+{
+	<p>Pension & Annuities Management System</p>
+}
+@if (p == 3)
+{
+	<p>Estate Management System</p>
+}
+@if (p == 4)
+{
+	<p>IT Service Management System</p>
+}
+@if (p == 5)
+{
+	<p>Africabima Insurance Platform</p>
+}
+@if (p == 6)
+{
+	<p>Robotic Process Automation (RPA) System</p>
+}
+@if (p == 7)
+{
+	<p>Blockchain Systems</p>
+}
+@if (p == 8)
+{
+	<p>Job Evaluation System</p>
+}
+@if (p == 9)
+{
+	<p>Enterprise Resource Planning</p>
+}
+
+<button @onclick="Next">Next</button>
+
+@code
+{
+	int p = 1;
+	void Next()
+	{
+		if (p >= 9)
+		{
+			p = 1;
+		}
+		else
+		{
+			p = p + 1;
+		}
+	}
+}

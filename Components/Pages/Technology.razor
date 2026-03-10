@@ -1,0 +1,43 @@
+﻿@page "/technology"
+
+<PageTitle>Technology</PageTitle>
+
+<h3>Technology</h3>
+@if (t == 1)
+{
+	<p>Cybersecurity</p>
+}
+else if (t == 2)
+{
+	<p>Robotics</p>
+}
+else if (t == 3)
+{
+	<p>Blockchain</p>
+}
+else if (t == 4)
+{
+	<p>IOT</p>
+}
+else if (t == 5)
+{
+	<p>Engineering</p>
+}
+
+<button @onclick="Next">Next</button>
+
+@code
+{
+	int t = 1;
+	void Next()
+	{
+		if (t >= 5)
+		{
+			t = 1;
+		}
+		else
+		{
+			t = t + 1;
+		}
+	}
+}

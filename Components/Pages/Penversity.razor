@@ -1,0 +1,32 @@
+﻿@page "/penversity"
+
+<PageTitle>Penversity</PageTitle>
+
+<h3>Penversity</h3>
+
+@if (p == 1)
+{
+	<p>Careers</p>
+}
+@if (p == 2)
+{
+	<p>University</p>
+}
+
+<button @onclick="Next">Next</button>
+
+@code
+{
+	int p = 1;
+	void Next()
+	{
+		if (p >= 2)
+		{
+			p = 1;
+		}
+		else
+		{
+			p = 2;
+		}
+	}
+}

@@ -1,7 +1,14 @@
 ﻿@page "/"
+@inject NavigationManager Nav
 
 <PageTitle>Home</PageTitle>
-
 <h1>Hello, world!</h1>
+Welcome to Pensoft.
 
-Welcome to your new app.
+<button @onclick='() => Nav.NavigateTo("/about")'>About</button>
+<button @onclick='() => Nav.NavigateTo("/solutions")'>Solutions</button>
+<button @onclick='() => Nav.NavigateTo("/services")'>Services</button>
+<button @onclick='() => Nav.NavigateTo("/technology")'>Technology</button>
+<button @onclick='() => Nav.NavigateTo("/products")'>Products</button>
+<button @onclick='() => Nav.NavigateTo("/penversity")'>Penversity</button>
+<button @onclick='() => Nav.NavigateTo("/contact")'>Contact</button>
