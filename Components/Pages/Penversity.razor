@@ -1,33 +1,68 @@
 ﻿@page "/penversity"
+<PageTitle>Penversity | Pensoft Systems</PageTitle>
 
-<PageTitle>Penversity</PageTitle>
+<div class="bg-[#0f1c35] text-white py-16 px-6 sm:px-10 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 80% 20%, #f97316 1%, transparent 30%);"></div>
 
-<h3>Penversity</h3>
+    <div class="max-w-7xl mx-auto relative z-10">
+        <p class="text-orange-500 font-bold tracking-widest uppercase mb-2 text-sm">Join Our Team</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">Penversity</h1>
+    </div>
+</div>
 
+<div class="bg-gray-50 min-h-screen py-16 lg:py-24 px-6 sm:px-10">
 
-@if (p == 1)
-{
-	<p>Careers</p>
-}
-@if (p == 2)
-{
-	<p>University</p>
-}
+    <div class="max-w-4xl mx-auto mb-16 text-center">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6">Opportunities for Everyone</h2>
+        <p class="text-xl text-slate-600 leading-relaxed font-medium">
+            Whatever your background, experience, or goals, we have a place for you. Discover how you can grow your career and build the future of African technology with Pensoft Systems.
+        </p>
+    </div>
 
-<button @onclick="Next">Next</button>
+    <div class="max-w-6xl mx-auto flex flex-col gap-16">
 
-@code
-{
-	int p = 1;
-	void Next()
-	{
-		if (p >= 2)
-		{
-			p = 1;
-		}
-		else
-		{
-			p = 2;
-		}
-	}
-}
+        <div class="flex flex-col md:flex-row bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-slate-100 group">
+            <div class="md:w-2/5 bg-slate-200 relative overflow-hidden min-h-[300px]">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop" alt="Corporate Professionals" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <div class="absolute inset-0 bg-blue-900/20"></div>
+            </div>
+            <div class="md:w-3/5 p-8 lg:p-12 flex flex-col justify-center">
+                <span class="text-orange-500 font-bold tracking-wider uppercase text-sm mb-3">Professionals</span>
+                <h3 class="text-3xl font-bold text-slate-900 mb-4">Careers</h3>
+                <p class="text-lg text-slate-600 leading-relaxed mb-8">
+                    Pensoft Systems offers a wide range of careers. Whether you are looking to join our highly skilled technology team, our creative marketing department, or our driven business teams, we want you on board.
+                </p>
+                <div>
+                    <a href="mailto:careers@pensoft.co.ke" class="inline-flex items-center gap-2 bg-orange-500 text-white px-6 py-3 rounded font-bold hover:bg-orange-600 transition-colors shadow-md">
+                        Email Your CV
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row-reverse bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-slate-100 group">
+            <div class="md:w-2/5 bg-slate-200 relative overflow-hidden min-h-[300px]">
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1000&auto=format&fit=crop" alt="Students and Innovators" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <div class="absolute inset-0 bg-orange-500/20"></div>
+            </div>
+            <div class="md:w-3/5 p-8 lg:p-12 flex flex-col justify-center">
+                <span class="text-orange-500 font-bold tracking-wider uppercase text-sm mb-3">Learners & Innovators</span>
+                <h3 class="text-3xl font-bold text-slate-900 mb-4">Pensoft University</h3>
+                <p class="text-lg text-slate-600 leading-relaxed mb-4">
+                    When you have success that finances your projects like we do, you can build a variety of businesses, revamp old ones, or explore new, uncharted online territory—all under one roof!
+                </p>
+                <p class="text-lg text-slate-600 leading-relaxed mb-8">
+                    If you like new ideas, challenges, "re-inventing things", and working with a small but absurdly talented group of people in a learning-friendly, rapidly evolving environment, we want to hear from you.
+                </p>
+                <div>
+                    <a href="mailto:info@pensoft.co.ke" class="inline-flex items-center gap-2 border-2 border-[#0f1c35] text-[#0f1c35] px-6 py-3 rounded font-bold hover:bg-[#0f1c35] hover:text-white transition-colors shadow-sm">
+                        Contact Us
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

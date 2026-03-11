@@ -1,5 +1,37 @@
 ﻿@page "/"
+<PageTitle>Home | Pensoft Systems</PageTitle>
 
-<PageTitle>Home</PageTitle>
-<h1>Hello, world!</h1>
-Welcome to Pensoft.
+<div class="bg-[#0f1c35] relative overflow-hidden text-white py-20 lg:py-32 px-6 sm:px-10">
+
+    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 70% 50%, #f97316 1%, transparent 40%);"></div>
+
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center relative z-10">
+
+        <div class="w-full lg:w-1/2 pr-0 lg:pr-12">
+
+            <h1 class="text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                The <span class="text-orange-500">Knowledge</span> Based <br class="hidden lg:block" /> Solutions Provider.
+            </h1>
+
+            <p class="text-slate-300 text-lg mb-10 max-w-lg leading-relaxed">
+                We offer innovative IT solutions with a commitment to results and customer satisfaction. Our portfolio delivers reliable technology that gives real business value.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="/contact" class="bg-orange-500 text-white px-8 py-3 rounded font-semibold hover:bg-orange-600 transition text-center shadow-lg shadow-orange-500/20">
+                    Get Started
+                </a>
+                <a href="/solutions" class="border border-orange-500 text-orange-500 px-8 py-3 rounded font-semibold hover:bg-orange-500 hover:text-white transition text-center">
+                    Our Solutions
+                </a>
+            </div>
+        </div>
+
+        <div class="w-full lg:w-1/2 mt-16 lg:mt-0 flex justify-center lg:justify-end">
+            <div class="relative w-[350px] h-[350px] lg:w-[450px] lg:h-[450px] rounded-full overflow-hidden shadow-2xl ring-4 ring-[#0f1c35]">
+                <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Pensoft Team Collaborating" />
+            </div>
+        </div>
+
+    </div>
+</div>

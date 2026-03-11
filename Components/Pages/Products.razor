@@ -1,61 +1,144 @@
 ﻿@page "/products"
+<PageTitle>Products | Pensoft Systems</PageTitle>
 
-<PageTitle>Products</PageTitle>
+<div class="bg-[#0f1c35] text-white py-16 px-6 sm:px-10 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 80% 20%, #f97316 1%, transparent 30%);"></div>
 
-<h3>Products</h3>
+    <div class="max-w-7xl mx-auto relative z-10">
+        <p class="text-orange-500 font-bold tracking-widest uppercase mb-2 text-sm">Enterprise Software</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">Our Products</h1>
+    </div>
+</div>
 
+<div class="bg-gray-50 min-h-screen py-16 lg:py-24 px-6 sm:px-10">
 
-@if (p == 1)
-{
-	<p>Bancassurance System</p>
-}
-@if (p == 2)
-{
-	<p>Pension & Annuities Management System</p>
-}
-@if (p == 3)
-{
-	<p>Estate Management System</p>
-}
-@if (p == 4)
-{
-	<p>IT Service Management System</p>
-}
-@if (p == 5)
-{
-	<p>Africabima Insurance Platform</p>
-}
-@if (p == 6)
-{
-	<p>Robotic Process Automation (RPA) System</p>
-}
-@if (p == 7)
-{
-	<p>Blockchain Systems</p>
-}
-@if (p == 8)
-{
-	<p>Job Evaluation System</p>
-}
-@if (p == 9)
-{
-	<p>Enterprise Resource Planning</p>
-}
+    <div class="max-w-7xl mx-auto mb-12">
+        <p class="text-xl text-slate-700 leading-relaxed font-medium max-w-3xl">
+            We provide various software products in accordance with your requirements and specifications. We design, develop, test, and integrate software across multiple platforms.
+        </p>
+    </div>
 
-<button @onclick="Next">Next</button>
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 lg:gap-12">
 
-@code
-{
-	int p = 1;
-	void Next()
-	{
-		if (p >= 9)
-		{
-			p = 1;
-		}
-		else
-		{
-			p = p + 1;
-		}
-	}
+        <div class="w-full lg:w-1/3 flex flex-col gap-2 h-fit">
+            <button @onclick="() => SetTab(1)" class="w-full text-left px-5 py-3 rounded-lg font-bold transition-all duration-300 @(p == 1 ? "bg-orange-500 text-white shadow-md transform translate-x-2" : "bg-white text-slate-600 hover:bg-orange-50 hover:text-orange-500 border border-transparent hover:border-orange-200")">
+                Pension System
+            </button>
+            <button @onclick="() => SetTab(2)" class="w-full text-left px-5 py-3 rounded-lg font-bold transition-all duration-300 @(p == 2 ? "bg-orange-500 text-white shadow-md transform translate-x-2" : "bg-white text-slate-600 hover:bg-orange-50 hover:text-orange-500 border border-transparent hover:border-orange-200")">
+                Bancassurance
+            </button>
+            <button @onclick="() => SetTab(3)" class="w-full text-left px-5 py-3 rounded-lg font-bold transition-all duration-300 @(p == 3 ? "bg-orange-500 text-white shadow-md transform translate-x-2" : "bg-white text-slate-600 hover:bg-orange-50 hover:text-orange-500 border border-transparent hover:border-orange-200")">
+                Estate Management
+            </button>
+            <button @onclick="() => SetTab(4)" class="w-full text-left px-5 py-3 rounded-lg font-bold transition-all duration-300 @(p == 4 ? "bg-orange-500 text-white shadow-md transform translate-x-2" : "bg-white text-slate-600 hover:bg-orange-50 hover:text-orange-500 border border-transparent hover:border-orange-200")">
+                Digital Insurance Platform
+            </button>
+            <button @onclick="() => SetTab(5)" class="w-full text-left px-5 py-3 rounded-lg font-bold transition-all duration-300 @(p == 5 ? "bg-orange-500 text-white shadow-md transform translate-x-2" : "bg-white text-slate-600 hover:bg-orange-50 hover:text-orange-500 border border-transparent hover:border-orange-200")">
+                IT Service Management
+            </button>
+            <button @onclick="() => SetTab(6)" class="w-full text-left px-5 py-3 rounded-lg font-bold transition-all duration-300 @(p == 6 ? "bg-orange-500 text-white shadow-md transform translate-x-2" : "bg-white text-slate-600 hover:bg-orange-50 hover:text-orange-500 border border-transparent hover:border-orange-200")">
+                Job Evaluation Systems
+            </button>
+            <button @onclick="() => SetTab(7)" class="w-full text-left px-5 py-3 rounded-lg font-bold transition-all duration-300 @(p == 7 ? "bg-orange-500 text-white shadow-md transform translate-x-2" : "bg-white text-slate-600 hover:bg-orange-50 hover:text-orange-500 border border-transparent hover:border-orange-200")">
+                Enterprise Resource Planning
+            </button>
+        </div>
+
+        <div class="w-full lg:w-2/3">
+            <div class="bg-white rounded-xl shadow-sm p-8 md:p-12 border-t-4 border-orange-500 min-h-[500px] flex flex-col justify-between transition-all duration-500">
+
+                <div class="animate-fade-in">
+                    @if (p == 1)
+                    {
+                        <h2 class="text-3xl font-bold text-slate-900 mb-2">iPen Pension System</h2>
+                        <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-semibold tracking-wide mb-6">Finance & Accounting</span>
+                        <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                            Designed to assist in the management of individual and scheme pension plans. The featured modules include Marketing, Quotation Management, Fund Administration, Pensioners Management, Investments Management, Scheduled Payments, Finance and Accounting, and Reporting.
+                        </p>
+                    }
+                    else if (p == 2)
+                    {
+                        <h2 class="text-3xl font-bold text-slate-900 mb-2">Ipen Bancassurance System</h2>
+                        <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-semibold tracking-wide mb-6">Banking & Insurance</span>
+                        <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                            Designed to assist banks, agents, and brokers in managing their insurance businesses. The modules available are System Administration, CRM, Global Configurations, Marketing, General Business, Life Business, Medical Business, Approvals Process, Claims, Finance and Accounting, and Business Intelligence Reporting.
+                        </p>
+                    }
+                    else if (p == 3)
+                    {
+                        <h2 class="text-3xl font-bold text-slate-900 mb-2">Ipen Real Estate Management System</h2>
+                        <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-semibold tracking-wide mb-6">Property Management</span>
+                        <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                            Designed to assist property owners and managers in the day-to-day management of their estates and apartment complexes. The system is able to manage finance and accounts, assets, service charges, homeowner CRM, and purchasing and acquisition.
+                        </p>
+                    }
+                    else if (p == 4)
+                    {
+                        <h2 class="text-3xl font-bold text-slate-900 mb-2">Africabima Digital Insurance Platform</h2>
+                        <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-semibold tracking-wide mb-6">Digital Platform</span>
+                        <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                            Africabima is a digital insurance platform meant to be utilized by banks, insurers, brokers, and other partners who want to better retain and monetize their customers through meaningful services. The platform comes with an Insurance Mobile Application, Web Application, and integrated APIs.
+                        </p>
+                    }
+                    else if (p == 5)
+                    {
+                        <h2 class="text-3xl font-bold text-slate-900 mb-2">Ipen ITSM</h2>
+                        <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-semibold tracking-wide mb-6">IT Support</span>
+                        <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                            Designed for large organizations with a large number of users to help in reporting ICT-related support issues to technical personnel. Other system functionalities include asset management, network device discovery, and contract/SLA management.
+                        </p>
+                    }
+                    else if (p == 6)
+                    {
+                        <h2 class="text-3xl font-bold text-slate-900 mb-2">Gradar Job Evaluation Systems</h2>
+                        <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-semibold tracking-wide mb-6">Human Capital</span>
+                        <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                            The future of job structure. Gradar is a fresh approach to Human Capital Management. With an innovative, intuitive, and affordable software suite, we provide businesses across the world with job evaluation, competency management, and compensation analysis.
+                        </p>
+                    }
+                    else if (p == 7)
+                    {
+                        <h2 class="text-3xl font-bold text-slate-900 mb-2">Enterprise Resource Planning (ERP)</h2>
+                        <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-semibold tracking-wide mb-6">Business Operations</span>
+                        <p class="text-lg text-slate-600 leading-relaxed mb-4">
+                            Provides true support for complex business processes while allowing localization per specific requirements. With proven technologies, it streamlines operations using real-time analytical tools to ensure customer satisfaction and rapid order processing.
+                        </p>
+                        <p class="text-lg text-slate-600 leading-relaxed">
+                            Benefits include unified information across all working departments, exact financial reporting, scheduled task completion, and on-time payment tracking.
+                        </p>
+                    }
+                </div>
+
+                <div class="mt-8 flex justify-end border-t border-slate-100 pt-6">
+                    <button @onclick="Next" class="flex items-center gap-2 bg-[#0f1c35] text-white px-8 py-3 rounded hover:bg-orange-500 transition-colors duration-300 font-semibold shadow-md">
+                        Next Product
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@code {
+    int p = 1;
+
+    void SetTab(int tabNumber)
+    {
+        p = tabNumber;
+    }
+
+    void Next()
+    {
+        if (p >= 7)
+        {
+            p = 1;
+        }
+        else
+        {
+            p = p + 1;
+        }
+    }
 }
