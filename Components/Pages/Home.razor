@@ -3,37 +3,48 @@
 @implements IDisposable
 <PageTitle>Home | Pensoft Systems</PageTitle>
 
-<div class="relative min-h-[85vh] flex items-center justify-center pt-24 pb-20 px-6 sm:px-10 overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop'); background-size: cover; background-position: center; background-attachment: fixed;">
+<HeadContent>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</HeadContent>
 
-    <div class="absolute inset-0 bg-[#0f1c35]/70 mix-blend-multiply z-0"></div>
+<div class="relative min-h-[85vh] flex items-center pt-24 pb-20 overflow-hidden bg-fixed bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop');">
 
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-orange-500 rounded-full mix-blend-screen filter blur-[120px] opacity-30 z-0 pointer-events-none"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-[#0f1c35]/95 via-[#0f1c35]/70 to-transparent z-0"></div>
 
-    <div class="relative z-10 w-full max-w-4xl bg-slate-900/40 backdrop-blur-xl border border-white/10 p-10 md:p-16 rounded-3xl shadow-2xl text-center">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 w-full relative z-10">
+        <div class="max-w-2xl text-left">
 
-        <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">
-            The <span class="text-orange-500 drop-shadow-md">Knowledge</span> Based <br class="hidden md:block" /> Solutions Provider.
-        </h1>
+            <p class="text-orange-500 font-bold tracking-widest uppercase mb-4 text-sm animate-fade-in-up">
+                Pensoft Systems Limited
+            </p>
 
-        <p class="text-slate-200 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
-            We offer innovative IT solutions with a commitment to results and customer satisfaction. Our portfolio delivers reliable technology that gives real business value.
-        </p>
+            <h1 class="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6 animate-fade-in-up" style="animation-delay: 100ms;">
+                Knowledge-Based Solutions for <span class="text-orange-500">Modern Enterprise.</span>
+            </h1>
 
-        <div class="flex flex-col sm:flex-row gap-5 justify-center">
-            <a href="/contact" class="bg-orange-500 text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-orange-600 transition-all shadow-lg shadow-orange-500/30 hover:-translate-y-1">
-                Get Started
-            </a>
-            <a href="/solutions" class="bg-slate-800/30 backdrop-blur-md border border-orange-500/50 text-orange-400 px-10 py-4 rounded-xl font-bold text-lg hover:bg-orange-500 hover:text-white transition-all hover:-translate-y-1">
-                Our Solutions
-            </a>
+            <p class="text-slate-300 text-lg mb-10 leading-relaxed animate-fade-in-up" style="animation-delay: 200ms;">
+                We offer innovative IT solutions with a commitment to results. Our portfolio delivers reliable technology that gives real business value to tier-one banks and government commissions.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style="animation-delay: 300ms;">
+                <a href="/contact" class="bg-orange-500 text-white px-8 py-3.5 rounded-lg font-bold hover:bg-orange-600 transition-colors shadow-lg shadow-orange-500/30 text-center">
+                    Get Started
+                </a>
+                <a href="/solutions" class="text-white px-8 py-3.5 rounded-lg font-bold hover:bg-white/10 transition-colors flex items-center justify-center gap-2 group">
+                    Explore Solutions
+                    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+            </div>
+
         </div>
-
     </div>
 </div>
 
-<div class="marquee-wrapper bg-white py-10 border-b border-slate-100 overflow-hidden relative flex items-center cursor-pointer">
-    <div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-    <div class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+<div class="marquee-wrapper bg-slate-50 py-10 border-b border-slate-200 overflow-hidden relative flex items-center cursor-pointer z-10">
+    <div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none"></div>
+    <div class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none"></div>
 
     <div class="flex w-max animate-marquee items-center gap-20 pr-20 group">
         <img src="/logos/kenya-airways-vector-logo-small.png" alt="Kenya Airways" class="h-10 w-auto max-w-[160px] object-contain flex-shrink-0 transition-transform duration-300 hover:scale-105" />
@@ -56,82 +67,80 @@
     </div>
 </div>
 
-<style>
-    .animate-marquee {
-        animation: marquee 40s linear infinite;
-    }
+<div class="relative py-24 px-6 sm:px-10 z-0 bg-fixed bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop');">
 
-    .marquee-wrapper:hover .animate-marquee {
-        animation-play-state: paused;
-    }
+    <div class="absolute inset-0 bg-[#0f1c35]/90 z-0 pointer-events-none"></div>
 
-    @@keyframes marquee {
-        0% {
-            transform: translateX(0%);
-        }
+    <div class="max-w-7xl mx-auto scroll-reveal relative z-10">
 
-        100% {
-            transform: translateX(-50%);
-        }
-    }
-</style>
-
-<div class="bg-gray-50 py-20 px-6 sm:px-10">
-    <div class="max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div class="max-w-2xl">
-                <p class="text-orange-500 font-bold tracking-widest uppercase mb-2 text-sm">Our Expertise</p>
-                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
-                    Reliable technology solutions that deliver real business value.
+                <p class="text-orange-500 font-bold tracking-widest uppercase mb-2 text-sm">Our Proven Process</p>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+                    End-to-end expertise for the modern enterprise.
                 </h2>
             </div>
-            <a href="/services" class="hidden md:flex items-center gap-2 text-[#0f1c35] font-bold hover:text-orange-500 transition-colors group">
+            <a href="/services" class="hidden md:flex items-center gap-2 text-orange-400 font-bold hover:text-white transition-colors group">
                 View All Services
                 <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </a>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer">
-                <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-orange-500 transition-colors duration-300">
-                    <svg class="w-6 h-6 text-orange-500 group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+        <div class="relative bg-white/95 backdrop-blur-xl rounded-3xl p-8 md:p-12 shadow-2xl border border-white/20">
+
+            <div class="hidden md:block absolute top-1/2 left-12 right-12 h-0.5 bg-slate-200 -translate-y-1/2 z-0"></div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
+
+                <div class="group relative bg-transparent px-4 py-6 text-center cursor-pointer transition-all hover:-translate-y-2">
+                    <div class="w-16 h-16 mx-auto bg-slate-50 border-4 border-white shadow-md rounded-full flex items-center justify-center mb-6 group-hover:bg-orange-500 transition-colors duration-300 relative z-10">
+                        <span class="text-slate-400 font-bold group-hover:text-white transition-colors">01</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-orange-500 transition-colors">Consultancy</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm opacity-80 group-hover:opacity-100 transition-opacity">
+                        Harness the information you need to offer greater customer value and create entirely new business opportunities.
+                    </p>
                 </div>
-                <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-orange-500 transition-colors">Software Development</h3>
-                <p class="text-slate-600 leading-relaxed text-sm">
-                    High-level technical knowledge and organized, experienced development teams to build exactly what your enterprise needs.
-                </p>
-            </div>
-            <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer">
-                <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-orange-500 transition-colors duration-300">
-                    <svg class="w-6 h-6 text-orange-500 group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path></svg>
+
+                <div class="group relative bg-transparent px-4 py-6 text-center cursor-pointer transition-all hover:-translate-y-2">
+                    <div class="w-16 h-16 mx-auto bg-slate-50 border-4 border-white shadow-md rounded-full flex items-center justify-center mb-6 group-hover:bg-orange-500 transition-colors duration-300 relative z-10">
+                        <span class="text-slate-400 font-bold group-hover:text-white transition-colors">02</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-orange-500 transition-colors">Software Dev</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm opacity-80 group-hover:opacity-100 transition-opacity">
+                        High-level technical knowledge and organized, experienced development teams to build exactly what your enterprise needs.
+                    </p>
                 </div>
-                <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-orange-500 transition-colors">Consultancy</h3>
-                <p class="text-slate-600 leading-relaxed text-sm">
-                    Harness the information you need to offer greater customer value and create entirely new business opportunities.
-                </p>
-            </div>
-            <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer">
-                <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-orange-500 transition-colors duration-300">
-                    <svg class="w-6 h-6 text-orange-500 group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+
+                <div class="group relative bg-transparent px-4 py-6 text-center cursor-pointer transition-all hover:-translate-y-2">
+                    <div class="w-16 h-16 mx-auto bg-slate-50 border-4 border-white shadow-md rounded-full flex items-center justify-center mb-6 group-hover:bg-orange-500 transition-colors duration-300 relative z-10">
+                        <span class="text-slate-400 font-bold group-hover:text-white transition-colors">03</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-orange-500 transition-colors">System Integration</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm opacity-80 group-hover:opacity-100 transition-opacity">
+                        Adding immense value by creating seamless interactions and capabilities between your existing subsystems.
+                    </p>
                 </div>
-                <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-orange-500 transition-colors">System Integration</h3>
-                <p class="text-slate-600 leading-relaxed text-sm">
-                    Adding immense value by creating seamless interactions and capabilities between your existing subsystems.
-                </p>
+
             </div>
+
+            <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full shadow-lg border border-slate-100 flex items-center justify-center z-20 text-orange-500">
+                <svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+            </div>
+
         </div>
     </div>
 </div>
 
-<div class="bg-white py-20 px-6 sm:px-10">
-    <div class="max-w-7xl mx-auto">
+<div class="bg-slate-50 py-24 px-6 sm:px-10 relative z-10">
+    <div class="max-w-7xl mx-auto scroll-reveal">
         <div class="mb-12">
             <p class="text-orange-500 font-bold tracking-widest uppercase mb-2 text-sm">Flagship Platforms</p>
             <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">Enterprise systems, built to scale.</h2>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="md:col-span-2 bg-[#0f1c35] rounded-3xl p-10 text-white relative overflow-hidden group shadow-lg">
+            <div class="md:col-span-2 bg-[#0f1c35] rounded-3xl p-10 text-white relative overflow-hidden group shadow-lg hover:shadow-2xl hover:shadow-orange-500/20 hover:-translate-y-2 transition-all duration-300 cursor-pointer">
                 <div class="absolute top-0 right-0 w-64 h-64 bg-orange-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
                 <h3 class="text-3xl font-bold mb-4 relative z-10">iPen Pension & Annuities</h3>
                 <p class="text-slate-300 mb-8 max-w-md relative z-10 text-lg">
@@ -139,25 +148,25 @@
                 </p>
                 <a href="/products" class="inline-flex items-center gap-2 text-orange-400 font-bold hover:text-white transition-colors relative z-10">
                     Explore Platform
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                 </a>
             </div>
 
-            <div class="bg-slate-100 rounded-3xl p-10 hover:bg-orange-50 transition-colors duration-300 group shadow-sm">
+            <div class="bg-white rounded-3xl p-10 hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-200 hover:-translate-y-2 transition-all duration-300 group shadow-sm border border-slate-100 cursor-pointer">
                 <h3 class="text-2xl font-bold text-slate-900 mb-4 group-hover:text-orange-600 transition-colors">Bancassurance</h3>
                 <p class="text-slate-600 mb-8 text-sm leading-relaxed">
                     Seamlessly bridge the gap between banking and insurance networks with our high-availability platform.
                 </p>
             </div>
 
-            <div class="bg-slate-100 rounded-3xl p-10 hover:bg-orange-50 transition-colors duration-300 group shadow-sm">
+            <div class="bg-white rounded-3xl p-10 hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-200 hover:-translate-y-2 transition-all duration-300 group shadow-sm border border-slate-100 cursor-pointer">
                 <h3 class="text-2xl font-bold text-slate-900 mb-4 group-hover:text-orange-600 transition-colors">Africabima</h3>
                 <p class="text-slate-600 mb-8 text-sm leading-relaxed">
                     A dedicated, automated insurance platform streamlining policies, claims, and lifecycle management.
                 </p>
             </div>
 
-            <div class="md:col-span-2 bg-slate-100 rounded-3xl p-10 hover:bg-orange-50 transition-colors duration-300 group shadow-sm flex flex-col justify-center">
+            <div class="md:col-span-2 bg-white rounded-3xl p-10 hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-200 hover:-translate-y-2 transition-all duration-300 group shadow-sm border border-slate-100 flex flex-col justify-center cursor-pointer">
                 <h3 class="text-2xl font-bold text-slate-900 mb-4 group-hover:text-orange-600 transition-colors">Estate & IT Service Management</h3>
                 <p class="text-slate-600 text-sm leading-relaxed max-w-xl">
                     End-to-end solutions for multidimensional real estate infrastructure and robust IT Service frameworks perfectly tailored for the modern enterprise.
@@ -167,7 +176,7 @@
     </div>
 </div>
 
-<div id="impact-section" class="bg-[#0f1c35] py-20 relative overflow-hidden">
+<div id="impact-section" class="bg-[#0f1c35] py-20 relative overflow-hidden scroll-reveal z-10">
     <div class="max-w-7xl mx-auto px-6 sm:px-10 relative z-10">
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
@@ -202,12 +211,63 @@
     </div>
 </div>
 
+<style>
+    /* Let's remove the @@import since we are using HeadContent now */
+
+    html, body {
+        scroll-behavior: smooth;
+        font-family: 'Plus Jakarta Sans', sans-serif !important; /* Adding !important to force it over defaults */
+    }
+
+    .scroll-reveal {
+        opacity: 0;
+        transform: translateY(60px);
+        transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    .animate-fade-in-up {
+        animation: fadeInUp 0.8s ease-out forwards;
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    @@keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-marquee {
+        animation: marquee 40s linear infinite;
+    }
+
+    .marquee-wrapper:hover .animate-marquee {
+        animation-play-state: paused;
+    }
+
+    @@keyframes marquee {
+        0% {
+            transform: translateX(0%);
+        }
+
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+</style>
+
 @code {
     private int years = 0;
     private int systems = 0;
     private int percentage = 0;
     private bool hasAnimated = false;
-    private DotNetObjectReference<Home> objRef;
+    private DotNetObjectReference<Home>? objRef;
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -215,6 +275,7 @@
         {
             objRef = DotNetObjectReference.Create(this);
             await JS.InvokeVoidAsync("observeImpactSection", objRef);
+            await JS.InvokeVoidAsync("initScrollReveals");
         }
     }
 
@@ -259,5 +320,19 @@
         }, { threshold: 0.3 });
 
         observer.observe(section);
-    }
+    };
+
+    window.initScrollReveals = () => {
+        const revealElements = document.querySelectorAll('.scroll-reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+    };
 </script>
