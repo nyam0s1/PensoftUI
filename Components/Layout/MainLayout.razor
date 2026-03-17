@@ -10,13 +10,69 @@
             </a>
 
             <nav class="hidden lg:flex items-center gap-8 font-semibold text-slate-600">
-                <a href="/" class="hover:text-orange-500 transition-colors">Home</a>
-                <a href="/about" class="hover:text-orange-500 transition-colors">About</a>
-                <a href="/solutions" class="hover:text-orange-500 transition-colors">Solutions</a>
-                <a href="/services" class="hover:text-orange-500 transition-colors">Services</a>
-                <a href="/technology" class="hover:text-orange-500 transition-colors">Technology</a>
-                <a href="/products" class="hover:text-orange-500 transition-colors">Products</a>
-                <a href="/penversity" class="hover:text-orange-500 transition-colors">Penversity</a>
+                <a href="/" class="hover:text-orange-500 transition-colors py-6">Home</a>
+                <a href="/about" class="hover:text-orange-500 transition-colors py-6">About</a>
+                <a href="/solutions" class="hover:text-orange-500 transition-colors py-6">Solutions</a>
+                <a href="/services" class="hover:text-orange-500 transition-colors py-6">Services</a>
+
+                <div class="relative group">
+                    <a href="/technology" class="hover:text-orange-500 transition-colors py-6 flex items-center gap-1 cursor-pointer">
+                        Technology
+                        <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </a>
+
+                    <div class="absolute top-full left-1/2 -translate-x-1/2 w-56 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl shadow-slate-200/50 border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-4 group-hover:translate-y-0 z-50 p-3 flex flex-col gap-1">
+                        @foreach (var (label, id) in new[] {
+                                                ("Cybersecurity", "cybersecurity"),
+                                                ("Robotics", "robotics"),
+                                                ("Blockchain", "blockchain"),
+                                                ("IOT", "iot"),
+                                                ("Engineering", "engineering")
+                                                })
+                        {
+                            <a href="/technology#@id" class="px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-orange-500 hover:bg-orange-50 rounded-xl transition-colors block">
+                                @label
+                            </a>
+                        }
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <a href="/products" class="hover:text-orange-500 transition-colors py-6 flex items-center gap-1 cursor-pointer">
+                        Products
+                        <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </a>
+
+                    <div class="absolute top-full left-1/2 -translate-x-1/2 w-80 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl shadow-slate-200/50 border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-4 group-hover:translate-y-0 z-50 p-3 flex flex-col gap-1">
+                        @foreach (var (label, link) in new[] {
+                                                ("Bancassurance System", "/products#bancassurance"),
+                                                ("Pension & Annuities Management System", "/products#pension"),
+                                                ("Estate Management System", "/products#estate"),
+                                                ("IT Service Management System", "/products#itsm"),
+                                                ("Africabima Insurance Platform", "/products#africabima"),
+                                                ("Robotic Process Automation(RPA) System", ""),
+                                                ("Blockchain Systems", ""),
+                                                ("Job Evaluation System", "/products#job-evaluation"),
+                                                ("Enterprise Resource Planning", "/products#erp")
+                                                })
+                        {
+                            @if (string.IsNullOrEmpty(link))
+                            {
+                                <span class="px-4 py-2.5 text-sm font-medium text-slate-400 block cursor-default">
+                                    @label
+                                </span>
+                            }
+                            else
+                            {
+                                <a href="@link" class="px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-orange-500 hover:bg-orange-50 rounded-xl transition-colors block">
+                                    @label
+                                </a>
+                            }
+                        }
+                    </div>
+                </div>
+
+                <a href="/penversity" class="hover:text-orange-500 transition-colors py-6">Penversity</a>
             </nav>
 
             <div class="hidden lg:block">
@@ -59,12 +115,17 @@
                 </div>
 
                 <div>
-                    <h4 class="text-white font-bold text-base mb-6 tracking-wide">Useful Links</h4>
+                    <h4 class="text-white font-bold text-base mb-6 tracking-wide">Our Products</h4>
                     <ul class="space-y-3">
                         @foreach (var (label, href) in new[] {
-                        ("Home", "/"), ("About us", "/about"), ("Services", "/services"),
-                        ("Technology", "/technology"), ("Products", "/products"), ("Contact", "/contact")
-                        })
+                                                ("Pension & Annuities Management System", "/products#pension"),
+                                                ("Bancassurance System", "/products#bancassurance"),
+                                                ("Estate Management System", "/products#estate"),
+                                                ("Africabima Insurance Platform", "/products#africabima"),
+                                                ("IT Service Management System", "/products#itsm"),
+                                                ("Job Evaluation System", "/products#job-evaluation"),
+                                                ("Enterprise Resource Planning", "/products#erp")
+                                                })
                         {
                             <li>
                                 <a href="@href" class="text-slate-400 hover:text-orange-400 transition-colors text-sm flex items-center gap-2 group">

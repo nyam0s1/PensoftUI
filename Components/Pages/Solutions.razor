@@ -1,87 +1,147 @@
 ﻿@page "/solutions"
 <PageTitle>Solutions | Pensoft Systems</PageTitle>
 
-<div class="bg-[#0f1c35] text-white py-16 px-6 sm:px-10 relative overflow-hidden">
-    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 80% 20%, #f97316 1%, transparent 30%);"></div>
+<div class="relative min-h-[40vh] flex items-center pt-20 pb-16 overflow-hidden bg-fixed bg-cover bg-center"
+     style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');">
+    <div class="absolute inset-0 bg-gradient-to-r from-[#0f1c35]/95 via-[#0f1c35]/85 to-[#0f1c35]/60 z-0"></div>
+    <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 80% 20%, #f97316 1%, transparent 30%);"></div>
 
-    <div class="max-w-7xl mx-auto relative z-10">
-        <p class="text-orange-500 font-bold tracking-widest uppercase mb-2 text-sm">Industries We Serve</p>
-        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">Our Solutions</h1>
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 w-full relative z-10">
+        <p class="text-orange-500 font-bold tracking-widest uppercase mb-4 text-sm animate-fade-in">Industries We Serve</p>
+        <h1 class="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-4">Our Solutions</h1>
+        <div class="h-1.5 w-24 bg-orange-500 rounded-full"></div>
     </div>
 </div>
 
-<div class="bg-gray-50 min-h-screen py-16 lg:py-24 px-6 sm:px-10">
+<div class="py-16 lg:py-24 px-6 sm:px-10">
     <div class="max-w-7xl mx-auto">
-
-        <div class="max-w-3xl mb-16">
-            <p class="text-xl text-slate-700 leading-relaxed font-medium">
-                We deliver simple and reliable solutions to everyday problems facing many businesses. We are committed to developing and adapting these solutions to fit the ever-changing business landscape across multiple sectors.
-            </p>
-        </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            <div class="bg-white p-8 rounded-lg shadow-sm border-l-4 border-orange-500 hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
-                <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-orange-500 transition-colors">Banking</h3>
-                <p class="text-slate-600 leading-relaxed text-sm">
-                    We provide different solutions in core banking, system integration, Robotic Process Automation (RPA), and Microsoft Power Apps.
-                </p>
+            <div class="relative h-[380px] rounded-3xl overflow-hidden group cursor-pointer shadow-lg border border-slate-200/50">
+                <img src="https://images.unsplash.com/photo-1601597111158-2fceff292cdc?q=80&w=2070&auto=format&fit=crop" alt="Banking Solutions" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0f1c35] via-[#0f1c35]/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-500"></div>
+                <div class="absolute inset-x-0 bottom-0 p-8 transform transition-transform duration-500 group-hover:-translate-y-2">
+                    <h3 class="text-2xl font-bold text-white mb-3 flex items-center gap-2">
+                        Banking
+                        <svg class="w-5 h-5 text-orange-500 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        We provide different solutions in core banking, system integration, Robotic Process Automation (RPA), and Microsoft Power Apps.
+                    </p>
+                </div>
             </div>
 
-            <div class="bg-white p-8 rounded-lg shadow-sm border-l-4 border-orange-500 hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
-                <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-orange-500 transition-colors">Insurance</h3>
-                <p class="text-slate-600 leading-relaxed text-sm">
-                    Applied technology automates the exchange of information and data throughout the insurance lifecycle.
-                </p>
+            <div class="relative h-[380px] rounded-3xl overflow-hidden group cursor-pointer shadow-lg border border-slate-200/50">
+                <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format&fit=crop" alt="Insurance Solutions" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0f1c35] via-[#0f1c35]/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-500"></div>
+                <div class="absolute inset-x-0 bottom-0 p-8 transform transition-transform duration-500 group-hover:-translate-y-2">
+                    <h3 class="text-2xl font-bold text-white mb-3 flex items-center gap-2">
+                        Insurance
+                        <svg class="w-5 h-5 text-orange-500 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Applied technology automates the exchange of information and data throughout the insurance lifecycle.
+                    </p>
+                </div>
             </div>
 
-            <div class="bg-white p-8 rounded-lg shadow-sm border-l-4 border-orange-500 hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
-                <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-orange-500 transition-colors">Healthcare</h3>
-                <p class="text-slate-600 leading-relaxed text-sm">
-                    We offer a variety of scalable products that provide the features and functionality necessary to meet the needs of any size healthcare organization.
-                </p>
+            <div class="relative h-[380px] rounded-3xl overflow-hidden group cursor-pointer shadow-lg border border-slate-200/50">
+                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop" alt="Healthcare Solutions" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0f1c35] via-[#0f1c35]/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-500"></div>
+                <div class="absolute inset-x-0 bottom-0 p-8 transform transition-transform duration-500 group-hover:-translate-y-2">
+                    <h3 class="text-2xl font-bold text-white mb-3 flex items-center gap-2">
+                        Healthcare
+                        <svg class="w-5 h-5 text-orange-500 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        We offer a variety of scalable products that provide the features and functionality necessary to meet the needs of any size healthcare organization.
+                    </p>
+                </div>
             </div>
 
-            <div class="bg-white p-8 rounded-lg shadow-sm border-l-4 border-orange-500 hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
-                <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-orange-500 transition-colors">Education</h3>
-                <p class="text-slate-600 leading-relaxed text-sm">
-                    In the quest of improving the education system, we offer scalable products that provide the features and functionality necessary to meet the needs of any size learning institution.
-                </p>
+            <div class="relative h-[380px] rounded-3xl overflow-hidden group cursor-pointer shadow-lg border border-slate-200/50">
+                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2032&auto=format&fit=crop" alt="Education Solutions" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0f1c35] via-[#0f1c35]/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-500"></div>
+                <div class="absolute inset-x-0 bottom-0 p-8 transform transition-transform duration-500 group-hover:-translate-y-2">
+                    <h3 class="text-2xl font-bold text-white mb-3 flex items-center gap-2">
+                        Education
+                        <svg class="w-5 h-5 text-orange-500 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        In the quest of improving the education system, we offer scalable products with the features and functionality to meet the needs of any size learning institution.
+                    </p>
+                </div>
             </div>
 
-            <div class="bg-white p-8 rounded-lg shadow-sm border-l-4 border-orange-500 hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
-                <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-orange-500 transition-colors">Travel & Hospitality</h3>
-                <p class="text-slate-600 leading-relaxed text-sm">
-                    We deliver self-service technologies and incorporate customer insights into core business decisions and operations as travel systems move from software to cloud-based ERP.
-                </p>
+            <div class="relative h-[380px] rounded-3xl overflow-hidden group cursor-pointer shadow-lg border border-slate-200/50">
+                <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074&auto=format&fit=crop" alt="Travel Solutions" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0f1c35] via-[#0f1c35]/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-500"></div>
+                <div class="absolute inset-x-0 bottom-0 p-8 transform transition-transform duration-500 group-hover:-translate-y-2">
+                    <h3 class="text-2xl font-bold text-white mb-3 flex items-center gap-2">
+                        Travel & Hospitality
+                        <svg class="w-5 h-5 text-orange-500 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        We deliver self-service technologies and incorporate customer insights into core business decisions as travel systems move to cloud-based ERP.
+                    </p>
+                </div>
             </div>
 
-            <div class="bg-white p-8 rounded-lg shadow-sm border-l-4 border-orange-500 hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
-                <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-orange-500 transition-colors">Public Sector</h3>
-                <p class="text-slate-600 leading-relaxed text-sm">
-                    Pensoft is a professional software and consulting firm that provides web-based information software to the public sector.
-                </p>
+            <div class="relative h-[380px] rounded-3xl overflow-hidden group cursor-pointer shadow-lg border border-slate-200/50">
+                <img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?q=80&w=2059&auto=format&fit=crop" alt="Public Sector Solutions" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0f1c35] via-[#0f1c35]/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-500"></div>
+                <div class="absolute inset-x-0 bottom-0 p-8 transform transition-transform duration-500 group-hover:-translate-y-2">
+                    <h3 class="text-2xl font-bold text-white mb-3 flex items-center gap-2">
+                        Public Sector
+                        <svg class="w-5 h-5 text-orange-500 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Pensoft is a professional software and consulting firm that provides web-based information software to the public sector.
+                    </p>
+                </div>
             </div>
 
-            <div class="bg-white p-8 rounded-lg shadow-sm border-l-4 border-orange-500 hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
-                <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-orange-500 transition-colors">Retail</h3>
-                <p class="text-slate-600 leading-relaxed text-sm">
-                    With emphasis on performance and functionality, Ipen Retail fully supports customer-facing omnichannel and empowers the Enterprise Retailer.
-                </p>
+            <div class="relative h-[380px] rounded-3xl overflow-hidden group cursor-pointer shadow-lg border border-slate-200/50">
+                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop" alt="Retail Solutions" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0f1c35] via-[#0f1c35]/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-500"></div>
+                <div class="absolute inset-x-0 bottom-0 p-8 transform transition-transform duration-500 group-hover:-translate-y-2">
+                    <h3 class="text-2xl font-bold text-white mb-3 flex items-center gap-2">
+                        Retail
+                        <svg class="w-5 h-5 text-orange-500 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        With emphasis on performance and functionality, Ipen Retail fully supports customer-facing omnichannel and empowers the Enterprise Retailer.
+                    </p>
+                </div>
             </div>
 
-            <div class="bg-white p-8 rounded-lg shadow-sm border-l-4 border-orange-500 hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
-                <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-orange-500 transition-colors">Robotics</h3>
-                <p class="text-slate-600 leading-relaxed text-sm">
-                    Technological developments have changed the operations of the global market, and we try to keep up with these trends on Robotic Process Automation (RPA).
-                </p>
+            <div class="relative h-[380px] rounded-3xl overflow-hidden group cursor-pointer shadow-lg border border-slate-200/50">
+                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2070&auto=format&fit=crop" alt="Robotics Solutions" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0f1c35] via-[#0f1c35]/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-500"></div>
+                <div class="absolute inset-x-0 bottom-0 p-8 transform transition-transform duration-500 group-hover:-translate-y-2">
+                    <h3 class="text-2xl font-bold text-white mb-3 flex items-center gap-2">
+                        Robotics
+                        <svg class="w-5 h-5 text-orange-500 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Technological developments have changed the operations of the global market, and we try to keep up with these trends on Robotic Process Automation (RPA).
+                    </p>
+                </div>
             </div>
 
-            <div class="bg-white p-8 rounded-lg shadow-sm border-l-4 border-orange-500 hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
-                <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-orange-500 transition-colors">Real Estate Sector</h3>
-                <p class="text-slate-600 leading-relaxed text-sm">
-                    Development of large-scale and small-scale real estate infrastructure meets unique multi-dimensional challenges to compete in today's global economy.
-                </p>
+            <div class="relative h-[380px] rounded-3xl overflow-hidden group cursor-pointer shadow-lg border border-slate-200/50">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" alt="Real Estate Solutions" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0f1c35] via-[#0f1c35]/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-500"></div>
+                <div class="absolute inset-x-0 bottom-0 p-8 transform transition-transform duration-500 group-hover:-translate-y-2">
+                    <h3 class="text-2xl font-bold text-white mb-3 flex items-center gap-2">
+                        Real Estate Sector
+                        <svg class="w-5 h-5 text-orange-500 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Development of large-scale and small-scale real estate infrastructure meets unique multi-dimensional challenges to compete in today's global economy.
+                    </p>
+                </div>
             </div>
 
         </div>
