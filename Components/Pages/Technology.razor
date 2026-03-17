@@ -1,87 +1,97 @@
 ﻿@page "/technology"
 <PageTitle>Technology | Pensoft Systems</PageTitle>
 
-<div class="bg-[#0f1c35] text-white py-16 px-6 sm:px-10 relative overflow-hidden">
-    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 80% 20%, #f97316 1%, transparent 30%);"></div>
+<div class="relative min-h-[40vh] flex items-center pt-20 pb-16 overflow-hidden bg-fixed bg-cover bg-center"
+     style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');">
+    <div class="absolute inset-0 bg-gradient-to-r from-[#0f1c35]/95 via-[#0f1c35]/85 to-[#0f1c35]/60 z-0"></div>
+    <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 80% 20%, #f97316 1%, transparent 30%);"></div>
 
-    <div class="max-w-7xl mx-auto relative z-10">
-        <p class="text-orange-500 font-bold tracking-widest uppercase mb-2 text-sm">Our Innovations</p>
-        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">Technology</h1>
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 w-full relative z-10">
+        <p class="text-orange-500 font-bold tracking-widest uppercase mb-4 text-sm animate-fade-in">Our Innovations</p>
+        <h1 class="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-4">Technology</h1>
+        <div class="h-1.5 w-24 bg-orange-500 rounded-full"></div>
     </div>
 </div>
 
-<div class="bg-gray-50 min-h-screen py-16 lg:py-24 px-6 sm:px-10">
-    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 lg:gap-12">
+<div class="py-16 lg:py-24 px-6 sm:px-10">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-16">
 
-        <div class="w-full lg:w-1/3 flex flex-col gap-3">
-            <button @onclick="() => SetTab(1)" class="w-full text-left px-6 py-4 rounded-lg font-bold transition-all duration-300 @(t == 1 ? "bg-orange-500 text-white shadow-md transform translate-x-2" : "bg-white text-slate-600 hover:bg-orange-50 hover:text-orange-500 border border-transparent hover:border-orange-200")">
-                Cyber Security
-            </button>
-            <button @onclick="() => SetTab(2)" class="w-full text-left px-6 py-4 rounded-lg font-bold transition-all duration-300 @(t == 2 ? "bg-orange-500 text-white shadow-md transform translate-x-2" : "bg-white text-slate-600 hover:bg-orange-50 hover:text-orange-500 border border-transparent hover:border-orange-200")">
-                Robotic Process Automation (RPA)
-            </button>
-            <button @onclick="() => SetTab(3)" class="w-full text-left px-6 py-4 rounded-lg font-bold transition-all duration-300 @(t == 3 ? "bg-orange-500 text-white shadow-md transform translate-x-2" : "bg-white text-slate-600 hover:bg-orange-50 hover:text-orange-500 border border-transparent hover:border-orange-200")">
-                Blockchain
-            </button>
-            <button @onclick="() => SetTab(4)" class="w-full text-left px-6 py-4 rounded-lg font-bold transition-all duration-300 @(t == 4 ? "bg-orange-500 text-white shadow-md transform translate-x-2" : "bg-white text-slate-600 hover:bg-orange-50 hover:text-orange-500 border border-transparent hover:border-orange-200")">
-                Internet of Things (IoT)
-            </button>
-            <button @onclick="() => SetTab(5)" class="w-full text-left px-6 py-4 rounded-lg font-bold transition-all duration-300 @(t == 5 ? "bg-orange-500 text-white shadow-md transform translate-x-2" : "bg-white text-slate-600 hover:bg-orange-50 hover:text-orange-500 border border-transparent hover:border-orange-200")">
-                Engineering
-            </button>
+        <div class="w-full lg:w-1/3 flex flex-col gap-4 relative z-20">
+            @foreach (var (label, id) in new[] {
+                        ("Cyber Security", 1),
+                        ("Robotic Process Automation (RPA)", 2),
+                        ("Blockchain", 3),
+                        ("Internet of Things (IoT)", 4),
+                        ("Engineering", 5)
+                        })
+            {
+                <button @onclick="() => SetTab(id)" class="w-full text-left px-8 py-5 rounded-xl font-bold transition-all duration-300 group border border-slate-100 @(t == id ? "bg-orange-500 text-white shadow-lg transform translate-x-2" : "bg-white text-slate-700 hover:bg-orange-50 hover:text-orange-500 hover:border-orange-200")">
+                    <span class="flex items-center gap-3">
+                        <span class="text-orange-500 group-hover:scale-110 transition-transform @(t == id ? "text-white" : "")">❖</span>
+                        @label
+                    </span>
+                </button>
+            }
         </div>
 
         <div class="w-full lg:w-2/3">
-            <div class="bg-white rounded-xl shadow-sm p-8 md:p-12 border-t-4 border-orange-500 min-h-[450px] flex flex-col justify-between transition-all duration-500">
+            <div id="tech-content-panel" style="background-image: @GetBackgroundImage(t)" class="relative rounded-[2rem] overflow-hidden shadow-2xl border-t-8 border-orange-500 min-h-[500px] flex transition-all duration-700 group bg-cover bg-center">
 
-                <div class="animate-fade-in">
-                    @if (t == 1)
-                    {
-                        <h2 class="text-3xl font-bold text-slate-900 mb-6">Cyber Security</h2>
-                        <p class="text-lg text-slate-600 leading-relaxed mb-6">
-                            Pensoft Systems are able to successfully confront a proliferating breed of cyber attackers. We take pride in having skilled IT talent who understand the current and evolving cyber threat environment. With a robust strategy in place, your organization will be prepared for the future of cybersecurity.
-                        </p>
-                    }
-                    else if (t == 2)
-                    {
-                        <h2 class="text-3xl font-bold text-slate-900 mb-6">Robotic Process Automation (RPA)</h2>
-                        <p class="text-lg text-slate-600 leading-relaxed mb-4">
-                            Our Robotic Process Automation helps you transform Customer Experience and Simplify Business Operations. We build Digital Business Platforms of the future by Reimagining Business Processes, Energizing Legacy systems, and Accelerating Business Outcomes.
-                        </p>
-                        <p class="text-lg text-slate-600 leading-relaxed mb-6">
-                            Our RPA implementation goes beyond simply automating complex processes to create a true, enterprise-scale Intelligent Automation platform with stronger solutions for enterprise cloud, AI, machine learning, advanced data analytics, and more.
-                        </p>
-                    }
-                    else if (t == 3)
-                    {
-                        <h2 class="text-3xl font-bold text-slate-900 mb-6">Blockchain</h2>
-                        <p class="text-lg text-slate-600 leading-relaxed mb-6">
-                            The practical consequence is, for the first time, a way for one Internet user to transfer a unique piece of digital property to another Internet user, such that the transfer is guaranteed to be safe and secure. Everyone knows that the transfer has taken place, and nobody can challenge the legitimacy of the transfer. The consequences of this breakthrough are hard to overstate.
-                        </p>
-                    }
-                    else if (t == 4)
-                    {
-                        <h2 class="text-3xl font-bold text-slate-900 mb-6">Internet of Things (IoT)</h2>
-                        <p class="text-lg text-slate-600 leading-relaxed mb-6">
-                            Pensoft brings you Internet of Things that enables marketers to create totally different experiences in bridging the digital and physical world, certainly when they dare to think out of the box and beyond the pure aspect of personalized messaging.
-                        </p>
-                    }
-                    else if (t == 5)
-                    {
-                        <h2 class="text-3xl font-bold text-slate-900 mb-6">Engineering</h2>
-                        <p class="text-lg text-slate-600 leading-relaxed mb-6">
-                            Pensoft Systems has partnered with Chryso to develop innovative solutions and services for sustainable construction.
-                        </p>
-                    }
+                <div class="absolute inset-0 bg-[#0f1c35]/80 group-hover:bg-[#0f1c35]/70 transition-colors duration-500 pointer-events-none"></div>
+
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-orange-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 pointer-events-none"></div>
+
+                <div class="relative z-10 p-10 md:p-16 text-slate-100 flex flex-col justify-between h-full w-full">
+
+                    <div class="animate-fade-in">
+                        @if (t == 1)
+                        {
+                            <h2 class="text-4xl font-bold text-white mb-8">Cyber Security</h2>
+                            <p class="text-lg text-slate-200 leading-relaxed mb-6">
+                                Pensoft Systems are able to successfully confront a proliferating breed of cyber attackers. We take pride in having skilled IT talent who understand the current and evolving cyber threat environment. With a robust strategy in place, your organization will be prepared for the future of cybersecurity.
+                            </p>
+                        }
+                        else if (t == 2)
+                        {
+                            <h2 class="text-4xl font-bold text-white mb-8">Robotic Process Automation (RPA)</h2>
+                            <p class="text-lg text-slate-200 leading-relaxed mb-4">
+                                Our Robotic Process Automation helps you transform Customer Experience and Simplify Business Operations. We build Digital Business Platforms of the future by Reimagining Business Processes, Energizing Legacy systems, and Accelerating Business Outcomes.
+                            </p>
+                            <p class="text-lg text-slate-200 leading-relaxed">
+                                Our RPA implementation goes beyond simply automating complex processes to create a true, enterprise-scale Intelligent Automation platform with stronger solutions for enterprise cloud, AI, machine learning, advanced data analytics, and more.
+                            </p>
+                        }
+                        else if (t == 3)
+                        {
+                            <h2 class="text-4xl font-bold text-white mb-8">Blockchain</h2>
+                            <p class="text-lg text-slate-200 leading-relaxed mb-6">
+                                The practical consequence is, for the first time, a way for one Internet user to transfer a unique piece of digital property to another Internet user, such that the transfer is guaranteed to be safe and secure. Everyone knows that the transfer has taken place, and nobody can challenge the legitimacy of the transfer. The consequences of this breakthrough are hard to overstate.
+                            </p>
+                        }
+                        else if (t == 4)
+                        {
+                            <h2 class="text-4xl font-bold text-white mb-8">Internet of Things (IoT)</h2>
+                            <p class="text-lg text-slate-200 leading-relaxed mb-6">
+                                Pensoft brings you Internet of Things that enables marketers to create totally different experiences in bridging the digital and physical world, certainly when they dare to think out of the box and beyond the pure aspect of personalized messaging.
+                            </p>
+                        }
+                        else if (t == 5)
+                        {
+                            <h2 class="text-4xl font-bold text-white mb-8">Engineering</h2>
+                            <p class="text-lg text-slate-200 leading-relaxed mb-6">
+                                Pensoft Systems has partnered with Chryso to develop innovative solutions and services for sustainable construction.
+                            </p>
+                        }
+                    </div>
+
+                    <div class="mt-8 flex justify-end border-t border-white/10 pt-8">
+                        <button @onclick="Next" class="flex items-center gap-2 bg-white text-[#0f1c35] px-10 py-4 rounded-xl hover:bg-orange-500 hover:text-white transition-all duration-300 font-bold shadow-md">
+                            Next Technology
+                            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </button>
+                    </div>
+
                 </div>
-
-                <div class="mt-8 flex justify-end border-t border-slate-100 pt-6">
-                    <button @onclick="Next" class="flex items-center gap-2 bg-[#0f1c35] text-white px-8 py-3 rounded hover:bg-orange-500 transition-colors duration-300 font-semibold shadow-md">
-                        Next Technology
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </button>
-                </div>
-
             </div>
         </div>
 
@@ -91,7 +101,6 @@
 @code {
     int t = 1;
 
-    // Added a helper method so users can click the tabs directly
     void SetTab(int tabNumber)
     {
         t = tabNumber;
@@ -106,6 +115,20 @@
         else
         {
             t = t + 1;
+        }
+    }
+
+    // Helper method to assign high-quality images based on the current tab
+    string GetBackgroundImage(int tab)
+    {
+        switch (tab)
+        {
+            case 1: return "url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop')"; // Cyber lock
+            case 2: return "url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop')"; // Robotic processor
+            case 3: return "url('https://images.unsplash.com/photo-1639762681057-408e52192e55?q=80&w=2070&auto=format&fit=crop')"; // Blockchain network
+            case 4: return "url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop')"; // Connected IoT
+            case 5: return "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop')"; // Engineering site
+            default: return "";
         }
     }
 }

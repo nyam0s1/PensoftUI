@@ -115,16 +115,11 @@
                 </div>
 
                 <div>
-                    <h4 class="text-white font-bold text-base mb-6 tracking-wide">Our Products</h4>
+                    <h4 class="text-white font-bold text-base mb-6 tracking-wide">Useful Links</h4>
                     <ul class="space-y-3">
                         @foreach (var (label, href) in new[] {
-                                                ("Pension & Annuities Management System", "/products#pension"),
-                                                ("Bancassurance System", "/products#bancassurance"),
-                                                ("Estate Management System", "/products#estate"),
-                                                ("Africabima Insurance Platform", "/products#africabima"),
-                                                ("IT Service Management System", "/products#itsm"),
-                                                ("Job Evaluation System", "/products#job-evaluation"),
-                                                ("Enterprise Resource Planning", "/products#erp")
+                                                ("Home", "/"), ("About us", "/about"), ("Services", "/services"),
+                                                ("Technology", "/technology"), ("Products", "/products"), ("Contact", "/contact")
                                                 })
                         {
                             <li>
@@ -143,13 +138,14 @@
                     <h4 class="text-white font-bold text-base mb-6 tracking-wide">Our Products</h4>
                     <ul class="space-y-3">
                         @foreach (var (label, href) in new[] {
-                        ("Bancassurance System", "/products"),
-                        ("Pension & Annuities System", "/products"),
-                        ("Estate Management System", "/products"),
-                        ("Africabima Insurance Platform", "/products"),
-                        ("Robotic Process Automation (RPA)", "/products"),
-                        ("Job Evaluation System", "/products")
-                        })
+                                                ("Pension & Annuities Management System", "/products#pension"),
+                                                ("Bancassurance System", "/products#bancassurance"),
+                                                ("Estate Management System", "/products#estate"),
+                                                ("Africabima Insurance Platform", "/products#africabima"),
+                                                ("IT Service Management System", "/products#itsm"),
+                                                ("Job Evaluation System", "/products#job-evaluation"),
+                                                ("Enterprise Resource Planning", "/products#erp")
+                                                })
                         {
                             <li>
                                 <a href="@href" class="text-slate-400 hover:text-orange-400 transition-colors text-sm flex items-center gap-2 group">

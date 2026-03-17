@@ -1091,6 +1091,10 @@
     border-top-style: var(--tw-border-style);
     border-top-width: 4px;
   }
+  .border-t-8 {
+    border-top-style: var(--tw-border-style);
+    border-top-width: 8px;
+  }
   .border-t-\[6px\] {
     border-top-style: var(--tw-border-style);
     border-top-width: 6px;
@@ -1887,6 +1891,9 @@
   .py-4 {
     padding-block: calc(var(--spacing) * 4);
   }
+  .py-5 {
+    padding-block: calc(var(--spacing) * 5);
+  }
   .py-6 {
     padding-block: calc(var(--spacing) * 6);
   }
@@ -1910,6 +1917,9 @@
   }
   .pt-6 {
     padding-top: calc(var(--spacing) * 6);
+  }
+  .pt-8 {
+    padding-top: calc(var(--spacing) * 8);
   }
   .pt-16 {
     padding-top: calc(var(--spacing) * 16);
@@ -3210,6 +3220,11 @@
   .md\:p-12 {
     @media (width >= 48rem) {
       padding: calc(var(--spacing) * 12);
+    }
+  }
+  .md\:p-16 {
+    @media (width >= 48rem) {
+      padding: calc(var(--spacing) * 16);
     }
   }
   .md\:text-2xl {
