@@ -1,121 +1,129 @@
 ﻿@page "/products"
+@inject NavigationManager NavManager
+@implements IDisposable
 <PageTitle>Products | Pensoft Systems</PageTitle>
 
-<div class="bg-[#0f1c35] text-white py-16 px-6 sm:px-10 relative overflow-hidden">
-    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 80% 20%, #f97316 1%, transparent 30%);"></div>
+<div class="relative min-h-[40vh] flex items-center pt-20 pb-16 overflow-hidden bg-fixed bg-cover bg-center"
+     style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop');">
+    <div class="absolute inset-0 bg-gradient-to-r from-[#0f1c35]/95 via-[#0f1c35]/85 to-[#0f1c35]/60 z-0"></div>
+    <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 80% 20%, #f97316 1%, transparent 30%);"></div>
 
-    <div class="max-w-7xl mx-auto relative z-10">
-        <p class="text-orange-500 font-bold tracking-widest uppercase mb-2 text-sm">Enterprise Software</p>
-        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">Our Products</h1>
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 w-full relative z-10">
+        <p class="text-orange-500 font-bold tracking-widest uppercase mb-4 text-sm animate-fade-in">Enterprise Software</p>
+        <h1 class="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-4">Our Products</h1>
+        <div class="h-1.5 w-24 bg-orange-500 rounded-full"></div>
     </div>
 </div>
 
-<div class="bg-gray-50 min-h-screen py-16 lg:py-24 px-6 sm:px-10">
+<div class="py-16 lg:py-24 px-6 sm:px-10">
 
-    <div class="max-w-7xl mx-auto mb-12">
+    <div class="max-w-7xl mx-auto mb-16 text-center lg:text-left">
         <p class="text-xl text-slate-700 leading-relaxed font-medium max-w-3xl">
             We provide various software products in accordance with your requirements and specifications. We design, develop, test, and integrate software across multiple platforms.
         </p>
     </div>
 
-    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 lg:gap-12">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-16">
 
-        <div class="w-full lg:w-1/3 flex flex-col gap-2 h-fit">
-            <button @onclick="() => SetTab(1)" class="w-full text-left px-5 py-3 rounded-lg font-bold transition-all duration-300 @(p == 1 ? "bg-orange-500 text-white shadow-md transform translate-x-2" : "bg-white text-slate-600 hover:bg-orange-50 hover:text-orange-500 border border-transparent hover:border-orange-200")">
-                Pension System
-            </button>
-            <button @onclick="() => SetTab(2)" class="w-full text-left px-5 py-3 rounded-lg font-bold transition-all duration-300 @(p == 2 ? "bg-orange-500 text-white shadow-md transform translate-x-2" : "bg-white text-slate-600 hover:bg-orange-50 hover:text-orange-500 border border-transparent hover:border-orange-200")">
-                Bancassurance
-            </button>
-            <button @onclick="() => SetTab(3)" class="w-full text-left px-5 py-3 rounded-lg font-bold transition-all duration-300 @(p == 3 ? "bg-orange-500 text-white shadow-md transform translate-x-2" : "bg-white text-slate-600 hover:bg-orange-50 hover:text-orange-500 border border-transparent hover:border-orange-200")">
-                Estate Management
-            </button>
-            <button @onclick="() => SetTab(4)" class="w-full text-left px-5 py-3 rounded-lg font-bold transition-all duration-300 @(p == 4 ? "bg-orange-500 text-white shadow-md transform translate-x-2" : "bg-white text-slate-600 hover:bg-orange-50 hover:text-orange-500 border border-transparent hover:border-orange-200")">
-                Digital Insurance Platform
-            </button>
-            <button @onclick="() => SetTab(5)" class="w-full text-left px-5 py-3 rounded-lg font-bold transition-all duration-300 @(p == 5 ? "bg-orange-500 text-white shadow-md transform translate-x-2" : "bg-white text-slate-600 hover:bg-orange-50 hover:text-orange-500 border border-transparent hover:border-orange-200")">
-                IT Service Management
-            </button>
-            <button @onclick="() => SetTab(6)" class="w-full text-left px-5 py-3 rounded-lg font-bold transition-all duration-300 @(p == 6 ? "bg-orange-500 text-white shadow-md transform translate-x-2" : "bg-white text-slate-600 hover:bg-orange-50 hover:text-orange-500 border border-transparent hover:border-orange-200")">
-                Job Evaluation Systems
-            </button>
-            <button @onclick="() => SetTab(7)" class="w-full text-left px-5 py-3 rounded-lg font-bold transition-all duration-300 @(p == 7 ? "bg-orange-500 text-white shadow-md transform translate-x-2" : "bg-white text-slate-600 hover:bg-orange-50 hover:text-orange-500 border border-transparent hover:border-orange-200")">
-                Enterprise Resource Planning
-            </button>
+        <div class="w-full lg:w-1/3 flex flex-col gap-3 relative z-20">
+            @foreach (var (label, idStr, tabNum) in new[] {
+                        ("Pension System", "pension", 1),
+                        ("Bancassurance", "bancassurance", 2),
+                        ("Estate Management", "estate", 3),
+                        ("Digital Insurance Platform", "africabima", 4),
+                        ("IT Service Management", "itsm", 5),
+                        ("Job Evaluation Systems", "job-evaluation", 6),
+                        ("Enterprise Resource Planning", "erp", 7)
+                        })
+            {
+                <button id="@idStr" @onclick="() => SetTab(tabNum)" class="w-full text-left px-6 py-4 rounded-xl font-bold transition-all duration-300 group border border-slate-100 scroll-mt-32 @(p == tabNum ? "bg-orange-500 text-white shadow-lg transform translate-x-2" : "bg-white text-slate-700 hover:bg-orange-50 hover:text-orange-500 hover:border-orange-200")">
+                    <span class="flex items-center gap-3">
+                        <span class="text-orange-500 group-hover:scale-110 transition-transform @(p == tabNum ? "text-white" : "")">❖</span>
+                        @label
+                    </span>
+                </button>
+            }
         </div>
 
         <div class="w-full lg:w-2/3">
-            <div class="bg-white rounded-xl shadow-sm p-8 md:p-12 border-t-4 border-orange-500 min-h-[500px] flex flex-col justify-between transition-all duration-500">
+            <div style="background-image: @GetBackgroundImage(p)" class="relative rounded-[2rem] overflow-hidden shadow-2xl border-t-8 border-orange-500 min-h-[550px] flex transition-all duration-700 group bg-cover bg-center">
 
-                <div class="animate-fade-in">
-                    @if (p == 1)
-                    {
-                        <h2 class="text-3xl font-bold text-slate-900 mb-2">iPen Pension System</h2>
-                        <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-semibold tracking-wide mb-6">Finance & Accounting</span>
-                        <p class="text-lg text-slate-600 leading-relaxed mb-6">
-                            Designed to assist in the management of individual and scheme pension plans. The featured modules include Marketing, Quotation Management, Fund Administration, Pensioners Management, Investments Management, Scheduled Payments, Finance and Accounting, and Reporting.
-                        </p>
-                    }
-                    else if (p == 2)
-                    {
-                        <h2 class="text-3xl font-bold text-slate-900 mb-2">Ipen Bancassurance System</h2>
-                        <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-semibold tracking-wide mb-6">Banking & Insurance</span>
-                        <p class="text-lg text-slate-600 leading-relaxed mb-6">
-                            Designed to assist banks, agents, and brokers in managing their insurance businesses. The modules available are System Administration, CRM, Global Configurations, Marketing, General Business, Life Business, Medical Business, Approvals Process, Claims, Finance and Accounting, and Business Intelligence Reporting.
-                        </p>
-                    }
-                    else if (p == 3)
-                    {
-                        <h2 class="text-3xl font-bold text-slate-900 mb-2">Ipen Real Estate Management System</h2>
-                        <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-semibold tracking-wide mb-6">Property Management</span>
-                        <p class="text-lg text-slate-600 leading-relaxed mb-6">
-                            Designed to assist property owners and managers in the day-to-day management of their estates and apartment complexes. The system is able to manage finance and accounts, assets, service charges, homeowner CRM, and purchasing and acquisition.
-                        </p>
-                    }
-                    else if (p == 4)
-                    {
-                        <h2 class="text-3xl font-bold text-slate-900 mb-2">Africabima Digital Insurance Platform</h2>
-                        <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-semibold tracking-wide mb-6">Digital Platform</span>
-                        <p class="text-lg text-slate-600 leading-relaxed mb-6">
-                            Africabima is a digital insurance platform meant to be utilized by banks, insurers, brokers, and other partners who want to better retain and monetize their customers through meaningful services. The platform comes with an Insurance Mobile Application, Web Application, and integrated APIs.
-                        </p>
-                    }
-                    else if (p == 5)
-                    {
-                        <h2 class="text-3xl font-bold text-slate-900 mb-2">Ipen ITSM</h2>
-                        <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-semibold tracking-wide mb-6">IT Support</span>
-                        <p class="text-lg text-slate-600 leading-relaxed mb-6">
-                            Designed for large organizations with a large number of users to help in reporting ICT-related support issues to technical personnel. Other system functionalities include asset management, network device discovery, and contract/SLA management.
-                        </p>
-                    }
-                    else if (p == 6)
-                    {
-                        <h2 class="text-3xl font-bold text-slate-900 mb-2">Gradar Job Evaluation Systems</h2>
-                        <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-semibold tracking-wide mb-6">Human Capital</span>
-                        <p class="text-lg text-slate-600 leading-relaxed mb-6">
-                            The future of job structure. Gradar is a fresh approach to Human Capital Management. With an innovative, intuitive, and affordable software suite, we provide businesses across the world with job evaluation, competency management, and compensation analysis.
-                        </p>
-                    }
-                    else if (p == 7)
-                    {
-                        <h2 class="text-3xl font-bold text-slate-900 mb-2">Enterprise Resource Planning (ERP)</h2>
-                        <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-semibold tracking-wide mb-6">Business Operations</span>
-                        <p class="text-lg text-slate-600 leading-relaxed mb-4">
-                            Provides true support for complex business processes while allowing localization per specific requirements. With proven technologies, it streamlines operations using real-time analytical tools to ensure customer satisfaction and rapid order processing.
-                        </p>
-                        <p class="text-lg text-slate-600 leading-relaxed">
-                            Benefits include unified information across all working departments, exact financial reporting, scheduled task completion, and on-time payment tracking.
-                        </p>
-                    }
+                <div class="absolute inset-0 bg-[#0f1c35]/85 group-hover:bg-[#0f1c35]/75 transition-colors duration-500 pointer-events-none"></div>
+
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-orange-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 pointer-events-none"></div>
+
+                <div class="relative z-10 p-10 md:p-14 text-slate-100 flex flex-col justify-between h-full w-full">
+
+                    <div class="animate-fade-in">
+                        @if (p == 1)
+                        {
+                            <h2 class="text-4xl font-bold text-white mb-4">iPen Pension System</h2>
+                            <span class="inline-block bg-white/10 text-orange-400 border border-white/20 backdrop-blur-sm text-sm px-4 py-1.5 rounded-full font-semibold tracking-wide mb-8">Finance & Accounting</span>
+                            <p class="text-lg text-slate-200 leading-relaxed">
+                                Designed to assist in the management of individual and scheme pension plans. The featured modules include Marketing, Quotation Management, Fund Administration, Pensioners Management, Investments Management, Scheduled Payments, Finance and Accounting, and Reporting.
+                            </p>
+                        }
+                        else if (p == 2)
+                        {
+                            <h2 class="text-4xl font-bold text-white mb-4">Ipen Bancassurance System</h2>
+                            <span class="inline-block bg-white/10 text-orange-400 border border-white/20 backdrop-blur-sm text-sm px-4 py-1.5 rounded-full font-semibold tracking-wide mb-8">Banking & Insurance</span>
+                            <p class="text-lg text-slate-200 leading-relaxed">
+                                Designed to assist banks, agents, and brokers in managing their insurance businesses. The modules available are System Administration, CRM, Global Configurations, Marketing, General Business, Life Business, Medical Business, Approvals Process, Claims, Finance and Accounting, and Business Intelligence Reporting.
+                            </p>
+                        }
+                        else if (p == 3)
+                        {
+                            <h2 class="text-4xl font-bold text-white mb-4">Ipen Real Estate Management System</h2>
+                            <span class="inline-block bg-white/10 text-orange-400 border border-white/20 backdrop-blur-sm text-sm px-4 py-1.5 rounded-full font-semibold tracking-wide mb-8">Property Management</span>
+                            <p class="text-lg text-slate-200 leading-relaxed">
+                                Designed to assist property owners and managers in the day-to-day management of their estates and apartment complexes. The system is able to manage finance and accounts, assets, service charges, homeowner CRM, and purchasing and acquisition.
+                            </p>
+                        }
+                        else if (p == 4)
+                        {
+                            <h2 class="text-4xl font-bold text-white mb-4">Africabima Digital Insurance Platform</h2>
+                            <span class="inline-block bg-white/10 text-orange-400 border border-white/20 backdrop-blur-sm text-sm px-4 py-1.5 rounded-full font-semibold tracking-wide mb-8">Digital Platform</span>
+                            <p class="text-lg text-slate-200 leading-relaxed">
+                                Africabima is a digital insurance platform meant to be utilized by banks, insurers, brokers, and other partners who want to better retain and monetize their customers through meaningful services. The platform comes with an Insurance Mobile Application, Web Application, and integrated APIs.
+                            </p>
+                        }
+                        else if (p == 5)
+                        {
+                            <h2 class="text-4xl font-bold text-white mb-4">Ipen ITSM</h2>
+                            <span class="inline-block bg-white/10 text-orange-400 border border-white/20 backdrop-blur-sm text-sm px-4 py-1.5 rounded-full font-semibold tracking-wide mb-8">IT Support</span>
+                            <p class="text-lg text-slate-200 leading-relaxed">
+                                Designed for large organizations with a large number of users to help in reporting ICT-related support issues to technical personnel. Other system functionalities include asset management, network device discovery, and contract/SLA management.
+                            </p>
+                        }
+                        else if (p == 6)
+                        {
+                            <h2 class="text-4xl font-bold text-white mb-4">Gradar Job Evaluation Systems</h2>
+                            <span class="inline-block bg-white/10 text-orange-400 border border-white/20 backdrop-blur-sm text-sm px-4 py-1.5 rounded-full font-semibold tracking-wide mb-8">Human Capital</span>
+                            <p class="text-lg text-slate-200 leading-relaxed">
+                                The future of job structure. Gradar is a fresh approach to Human Capital Management. With an innovative, intuitive, and affordable software suite, we provide businesses across the world with job evaluation, competency management, and compensation analysis.
+                            </p>
+                        }
+                        else if (p == 7)
+                        {
+                            <h2 class="text-4xl font-bold text-white mb-4">Enterprise Resource Planning (ERP)</h2>
+                            <span class="inline-block bg-white/10 text-orange-400 border border-white/20 backdrop-blur-sm text-sm px-4 py-1.5 rounded-full font-semibold tracking-wide mb-8">Business Operations</span>
+                            <p class="text-lg text-slate-200 leading-relaxed mb-4">
+                                Provides true support for complex business processes while allowing localization per specific requirements. With proven technologies, it streamlines operations using real-time analytical tools to ensure customer satisfaction and rapid order processing.
+                            </p>
+                            <p class="text-lg text-slate-200 leading-relaxed">
+                                Benefits include unified information across all working departments, exact financial reporting, scheduled task completion, and on-time payment tracking.
+                            </p>
+                        }
+                    </div>
+
+                    <div class="mt-10 flex justify-end border-t border-white/10 pt-8">
+                        <button @onclick="Next" class="flex items-center gap-2 bg-white text-[#0f1c35] px-10 py-4 rounded-xl hover:bg-orange-500 hover:text-white transition-all duration-300 font-bold shadow-md">
+                            Next Product
+                            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </button>
+                    </div>
+
                 </div>
-
-                <div class="mt-8 flex justify-end border-t border-slate-100 pt-6">
-                    <button @onclick="Next" class="flex items-center gap-2 bg-[#0f1c35] text-white px-8 py-3 rounded hover:bg-orange-500 transition-colors duration-300 font-semibold shadow-md">
-                        Next Product
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </button>
-                </div>
-
             </div>
         </div>
 
@@ -124,6 +132,47 @@
 
 @code {
     int p = 1;
+
+    protected override void OnInitialized()
+    {
+        // 1. Check the URL right when the page loads
+        CheckUriFragment();
+        // 2. Listen for URL changes if the user clicks a dropdown while already on the Products page
+        NavManager.LocationChanged += OnLocationChanged;
+    }
+
+    private void OnLocationChanged(object? sender, LocationChangedEventArgs e)
+    {
+        if (CheckUriFragment())
+        {
+            StateHasChanged();
+        }
+    }
+
+    // Maps the URL #hashtag to the correct tab number
+    private bool CheckUriFragment()
+    {
+        var uri = NavManager.ToAbsoluteUri(NavManager.Uri);
+        int oldP = p;
+
+        switch (uri.Fragment)
+        {
+            case "#pension": p = 1; break;
+            case "#bancassurance": p = 2; break;
+            case "#estate": p = 3; break;
+            case "#africabima": p = 4; break;
+            case "#itsm": p = 5; break;
+            case "#job-evaluation": p = 6; break;
+            case "#erp": p = 7; break;
+        }
+
+        return oldP != p; // Returns true if the tab actually changed
+    }
+
+    public void Dispose()
+    {
+        NavManager.LocationChanged -= OnLocationChanged;
+    }
 
     void SetTab(int tabNumber)
     {
@@ -139,6 +188,22 @@
         else
         {
             p = p + 1;
+        }
+    }
+
+    // Helper method to assign high-quality images based on the current product tab
+    string GetBackgroundImage(int tab)
+    {
+        switch (tab)
+        {
+            case 1: return "url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2070&auto=format&fit=crop')"; // Finance/Accounting
+            case 2: return "url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop')"; // Banking/Corporate
+            case 3: return "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop')"; // Real Estate/Buildings
+            case 4: return "url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')"; // Digital Tech Platform
+            case 5: return "url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop')"; // IT Support/Servers
+            case 6: return "url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop')"; // HR/Team Evaluation
+            case 7: return "url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop')"; // ERP/Dashboard Analytics
+            default: return "";
         }
     }
 }
