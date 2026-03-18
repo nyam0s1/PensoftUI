@@ -52,7 +52,7 @@
 
                 <div class="absolute bottom-0 left-0 w-64 h-64 bg-orange-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 pointer-events-none"></div>
 
-                <div class="relative z-10 p-10 md:p-14 text-slate-100 flex flex-col justify-between h-full w-full">
+                <div class="relative z-10 p-10 md:p-14 text-slate-100 flex flex-col justify-center h-full w-full">
 
                     <div class="animate-fade-in">
                         @if (p == 1)
@@ -83,9 +83,14 @@
                         {
                             <h2 class="text-4xl font-bold text-white mb-4">Africabima Digital Insurance Platform</h2>
                             <span class="inline-block bg-white/10 text-orange-400 border border-white/20 backdrop-blur-sm text-sm px-4 py-1.5 rounded-full font-semibold tracking-wide mb-8">Digital Platform</span>
-                            <p class="text-lg text-slate-200 leading-relaxed">
+                            <p class="text-lg text-slate-200 leading-relaxed mb-8">
                                 Africabima is a digital insurance platform meant to be utilized by banks, insurers, brokers, and other partners who want to better retain and monetize their customers through meaningful services. The platform comes with an Insurance Mobile Application, Web Application, and integrated APIs.
                             </p>
+                            
+                            <a href="https://africabima.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-white/10 hover:bg-orange-500 border border-white/20 hover:border-orange-500 text-white px-6 py-3 rounded-xl font-bold transition-all duration-300 group shadow-lg w-fit">
+                                Visit Africabima.com
+                                <svg class="w-5 h-5 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            </a>
                         }
                         else if (p == 5)
                         {
@@ -116,13 +121,6 @@
                         }
                     </div>
 
-                    <div class="mt-10 flex justify-end border-t border-white/10 pt-8">
-                        <button @onclick="Next" class="flex items-center gap-2 bg-white text-[#0f1c35] px-10 py-4 rounded-xl hover:bg-orange-500 hover:text-white transition-all duration-300 font-bold shadow-md">
-                            Next Product
-                            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                        </button>
-                    </div>
-
                 </div>
             </div>
         </div>
@@ -135,9 +133,7 @@
 
     protected override void OnInitialized()
     {
-        // 1. Check the URL right when the page loads
         CheckUriFragment();
-        // 2. Listen for URL changes if the user clicks a dropdown while already on the Products page
         NavManager.LocationChanged += OnLocationChanged;
     }
 
@@ -149,7 +145,6 @@
         }
     }
 
-    // Maps the URL #hashtag to the correct tab number
     private bool CheckUriFragment()
     {
         var uri = NavManager.ToAbsoluteUri(NavManager.Uri);
@@ -166,7 +161,7 @@
             case "#erp": p = 7; break;
         }
 
-        return oldP != p; // Returns true if the tab actually changed
+        return oldP != p;
     }
 
     public void Dispose()
@@ -179,30 +174,17 @@
         p = tabNumber;
     }
 
-    void Next()
-    {
-        if (p >= 7)
-        {
-            p = 1;
-        }
-        else
-        {
-            p = p + 1;
-        }
-    }
-
-    // Helper method to assign high-quality images based on the current product tab
     string GetBackgroundImage(int tab)
     {
         switch (tab)
         {
-            case 1: return "url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2070&auto=format&fit=crop')"; // Finance/Accounting
-            case 2: return "url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop')"; // Banking/Corporate
-            case 3: return "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop')"; // Real Estate/Buildings
-            case 4: return "url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')"; // Digital Tech Platform
-            case 5: return "url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop')"; // IT Support/Servers
-            case 6: return "url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop')"; // HR/Team Evaluation
-            case 7: return "url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop')"; // ERP/Dashboard Analytics
+            case 1: return "url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2070&auto=format&fit=crop')";
+            case 2: return "url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop')";
+            case 3: return "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop')";
+            case 4: return "url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')";
+            case 5: return "url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop')";
+            case 6: return "url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop')";
+            case 7: return "url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop')";
             default: return "";
         }
     }

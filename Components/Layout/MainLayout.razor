@@ -45,29 +45,20 @@
 
                     <div class="absolute top-full left-1/2 -translate-x-1/2 w-80 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl shadow-slate-200/50 border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-4 group-hover:translate-y-0 z-50 p-3 flex flex-col gap-1">
                         @foreach (var (label, link) in new[] {
-                                                ("Bancassurance System", "/products#bancassurance"),
-                                                ("Pension & Annuities Management System", "/products#pension"),
-                                                ("Estate Management System", "/products#estate"),
-                                                ("IT Service Management System", "/products#itsm"),
-                                                ("Africabima Insurance Platform", "/products#africabima"),
-                                                ("Robotic Process Automation(RPA) System", ""),
-                                                ("Blockchain Systems", ""),
-                                                ("Job Evaluation System", "/products#job-evaluation"),
-                                                ("Enterprise Resource Planning", "/products#erp")
-                                                })
+                            ("Bancassurance System", "/products#bancassurance"),
+                            ("Pension & Annuities Management System", "/products#pension"),
+                            ("Estate Management System", "/products#estate"),
+                            ("IT Service Management System", "/products#itsm"),
+                            ("Africabima Insurance Platform", "/products#africabima"),
+                            ("Robotic Process Automation(RPA) System", "/products"),
+                            ("Blockchain Systems", "/products"),
+                            ("Job Evaluation System", "/products#job-evaluation"),
+                            ("Enterprise Resource Planning", "/products#erp")
+                            })
                         {
-                            @if (string.IsNullOrEmpty(link))
-                            {
-                                <span class="px-4 py-2.5 text-sm font-medium text-slate-400 block cursor-default">
-                                    @label
-                                </span>
-                            }
-                            else
-                            {
-                                <a href="@link" class="px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-orange-500 hover:bg-orange-50 rounded-xl transition-colors block">
-                                    @label
-                                </a>
-                            }
+                            <a href="@link" class="px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-orange-500 hover:bg-orange-50 rounded-xl transition-colors block">
+                                @label
+                            </a>
                         }
                     </div>
                 </div>
@@ -254,15 +245,25 @@
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         max-width: 100%;
         border-radius: 0;
-        padding: 0.75rem 2.5rem;
+        /* REDUCED PADDING HERE: from 0.75rem to 0.25rem (top/bottom) */
+        padding: 0.25rem 2.5rem;
         background-color: rgba(255, 255, 255, 0.85);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
     }
 
+    /* Reduce vertical padding on the nav links to shrink overall height */
+    nav.lg\:flex > a,
+    nav.lg\:flex > div > a {
+        /* REDUCED PADDING HERE: from py-6 to py-4 */
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+
     /* 2. Scrolled state (The Floating Pill) */
     #main-header.scrolled {
-        padding-top: 1rem;
+        /* Adjusted top padding slightly to keep it tight */
+        padding-top: 0.75rem;
         padding-left: 1rem;
         padding-right: 1rem;
     }
@@ -270,7 +271,8 @@
         #main-header.scrolled #nav-container {
             max-width: 1100px;
             border-radius: 9999px;
-            padding: 0.5rem 2rem;
+            /* REDUCED PADDING HERE: from 0.5rem to 0.15rem (top/bottom) */
+            padding: 0.15rem 2rem;
             background-color: rgba(255, 255, 255, 0.65);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
