@@ -67,6 +67,7 @@
             <div class="w-[200px] h-[100px] bg-white rounded-2xl shadow-sm border border-slate-200/60 flex justify-center items-center p-6 hover:-translate-y-1 hover:shadow-lg hover:border-orange-200 transition-all duration-300">
                 <img src="/logos/Rafikilogo.png" alt="Rafiki" class="max-h-full max-w-full object-contain transition-transform duration-300 hover:scale-105" />
             </div>
+            
             <div class="w-[200px] h-[100px] bg-white rounded-2xl shadow-sm border border-slate-200/60 flex justify-center items-center p-6 hover:-translate-y-1 hover:shadow-lg hover:border-orange-200 transition-all duration-300">
                 <img src="/logos/kenya-airways-vector-logo-small.png" alt="Kenya Airways" class="max-h-full max-w-full object-contain transition-transform duration-300 hover:scale-105" />
             </div>
@@ -330,20 +331,23 @@
         transform: translateY(0);
     }
 
-    /* MARQUEE ANIMATION */
+    /* INFINITE MARQUEE ANIMATION */
     .animate-marquee {
         animation: marquee 40s linear infinite;
     }
+    /* Pauses the scrolling on mouse hover */
     .marquee-wrapper:hover .animate-marquee {
         animation-play-state: paused;
     }
     @@keyframes marquee {
         0% { transform: translateX(0%); }
+        /* Scrolls exactly 50% because the logos are duplicated in HTML - Binzyy */
         100% { transform: translateX(-50%); }
     }
 </style>
 
 <script>
+    // 1. Observer for the Number Counter Section
     window.observeImpactSection = (dotnetHelper) => {
         const section = document.getElementById('impact-section');
         if (!section) return;
@@ -358,6 +362,7 @@
         observer.observe(section);
     };
 
+    // 2. Observer for general CSS Scroll Reveals
     window.initScrollReveals = () => {
         const revealElements = document.querySelectorAll('.scroll-reveal');
         const revealObserver = new IntersectionObserver((entries) => {
@@ -371,6 +376,7 @@
         revealElements.forEach(el => revealObserver.observe(el));
     };
 
+    // 3. Progress bar animation for the testimonials
     window.startTestimonialProgress = (durationMs) => {
         const bar = document.getElementById('testimonial-progress');
         if (!bar) return;
@@ -383,9 +389,12 @@
             });
         });
     };
+    
+    // JS magic brought to you by Binzyy ✨
 </script>
 
 @code {
+    // State variables for the number counters
     private int years = 0;
     private int systems = 0;
     private int percentage = 0;
@@ -444,23 +453,22 @@
         if (hasAnimated) return;
         hasAnimated = true;
         
+        // Logic for the counter section
+        // Binzyy ofc
         for (int i = 0; i <= 100; i++)
         {
-            // Original linear counting logic
+            // Linear counting increments
             if (years < 15) years++;
             if (systems < 50) systems += 2;
             if (percentage < 100) percentage += 4;
             
-            // Safety bounds
             if (systems > 50) systems = 50;
             if (percentage > 100) percentage = 100;
             
             StateHasChanged();
             
-            // Stop the loop early once all numbers hit their target
             if (years == 15 && systems == 50 && percentage == 100) break;
 
-            // Increased delay from 25ms to 120ms to make the tick noticeably slow
             await Task.Delay(120); 
         }
     }
